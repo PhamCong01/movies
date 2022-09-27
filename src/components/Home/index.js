@@ -1,5 +1,6 @@
 import React from 'react';
 import ComingSoon from './ComingSoon';
+import Contact from './Contact';
 import Footer from './Footer';
 import Header from './Header';
 import MoviesNew from './MoviesNew';
@@ -11,6 +12,7 @@ function Home() {
         <MoviesNew/>
         <MoviesWeek/>
         <ComingSoon/>
+        <Contact/>
         <Footer/>
     </>
 }
