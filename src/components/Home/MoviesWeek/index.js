@@ -46,7 +46,7 @@ function MoviesWeek() {
   };
   return (
     <div className="w-full">
-      <div className="xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[730px] my-0 mx-auto mt-[200px] p-2 md:p-0">
+      <div className="xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[730px] my-0 mx-auto mt-[100px] p-2 md:p-0">
         <ul className="flex sm:items-center border-b flex-col sm:flex-row">
           {daysOfWeek.map((day) => (
             <li

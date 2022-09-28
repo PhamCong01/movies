@@ -49,8 +49,8 @@ function Header() {
             <FaBars />
           </div>
           {isShow && (
-            <div className="fixed w-full left-0 right-0 p-2 top-24 z-20">
-              <ul className="bg-black/80 text-center">
+            <div className="fixed md:hidden w-full left-0 right-0 p-2 top-24 z-20 ">
+              <ul className="bg-black/90 text-center">
                 {navLinks.map((link) => (
                   <li
                     key={link}
