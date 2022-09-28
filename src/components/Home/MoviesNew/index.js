@@ -1,135 +1,49 @@
 import React from "react";
 import { AiFillStar } from "react-icons/ai";
+import { BsFillPlayFill } from "react-icons/bs";
 function MoviesNew() {
+  const dataMoviesNew = ["The last post", "Dark and lonely", "Venture", "Hush"];
   return (
-    <div className="w-[80%] my-[70px] mx-auto">
-      <div className="w-[100%] border-b-[1px] border-gray-300 ">
-        <h2
-          className="pb-[20px] w-[10%] text-[#ec7532] font-medium text-[20px] relative transition-all
-           before:h-1 before:absolute before:bottom-0 before:right-0 before:transition-all before:duration-500
-          before:w-full before:left-0 before:bg-[#ec7532]"
-        >
-          NEW IN
-        </h2>
+    <div className="xl:max-w-[1140px] md:max-w-[690px] lg:max-w-[960px] max-w-[510px] my-[70px] mx-auto w-full p-2 md:p-0">
+      <div className="w-[100%] border-b-[1px] border-gray-300">
+        <h2 className="link active w-32 text-lg py-4 text-[#ec7532]">NEW IN</h2>
+        <div className="-mt-[1px] border-b border-white/20"></div>
       </div>
-      <div className="flex items-center justify-between mt-[50px]">
-        <div className="relative">
-          <div className="relative">
-            <img
-              className="rounded-lg"
-              src="https://cyber-movie-bootstrap.vercel.app/img/movie-1.jpg"
-              alt="movie"
-            />
-            <span className="mt-[10px] absolute left-[50%] translate-x-[-50%] font-medium">
-              The last post
-            </span>
-          </div>
-          <span className="flex items-center absolute left-[50%] translate-x-[-50%] bottom-[-60px]">
-            <span className="text-[#ec7532]">
-              <AiFillStar />
-            </span>
-            <span className="text-[#ec7532]">
-              <AiFillStar />
-            </span>
-            <span className="text-[#ec7532]">
-              <AiFillStar />
-            </span>
-            <span className="text-[#ec7532]">
-              <AiFillStar />
-            </span>
-            <span className="text-[#ec7532]">
-              <AiFillStar />
-            </span>
-          </span>
-        </div>
+      <div className="grid grid-cols-2 gap-8 mt-[50px] md:grid-cols-4">
+        {dataMoviesNew.map((name, index) => (
+          <div key={name} className="flex flex-col items-center">
+            <div className="group relative image rounded-lg">
+              <img
+                className="rounded-lg sm:h-[330px] md:h-[194px] lg:h-full"
+                src={`https://cyber-movie-bootstrap.vercel.app/img/movie-${
+                  index + 1
+                }.jpg`}
+                alt="movie"
+              />
+              <div className="image-overlay"></div>
+              <div className="opacity-0 group-hover:opacity-100 transition-all duration-1000 absolute text-white inset-0 flex flex-col justify-center items-center text-5xl">
+                <div className="p-4 border-2 border--white rounded-full">
+                  <BsFillPlayFill />
+                </div>
+                <div className="tracking-[0.2rem] text-sm mt-4 uppercase">
+                  Readmore
+                </div>
+                <div className="text-base mt-4">Released: 7 Mar, 2017</div>
+              </div>
+            </div>
 
-        <div className="relative">
-          <div className="relative">
-            <img
-              className="rounded-lg"
-              src="https://cyber-movie-bootstrap.vercel.app/img/movie-2.jpg"
-              alt="movie"
-            />
-            <span className="mt-[10px] absolute left-[50%] translate-x-[-50%] font-medium">
-              Dark and lonely
-            </span>
+            <div className="flex flex-col justify-center items-center mt-4">
+              <div className="text-[#4a4a4a] text-lg">{name}</div>
+              <div className="flex text-[#fbbd61] mt-4 text-xl">
+                {[...Array(5).keys()].map((value) => (
+                  <div key={value}>
+                    <AiFillStar />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-          <span className="flex items-center absolute left-[50%] translate-x-[-50%] bottom-[-60px]">
-            <span className="text-[#ec7532]">
-              <AiFillStar />
-            </span>
-            <span className="text-[#ec7532]">
-              <AiFillStar />
-            </span>
-            <span className="text-[#ec7532]">
-              <AiFillStar />
-            </span>
-            <span className="text-[#ec7532]">
-              <AiFillStar />
-            </span>
-            <span className="text-[#ec7532]">
-              <AiFillStar />
-            </span>
-          </span>
-        </div>
-        <div className="relative">
-          <div className="relative">
-            <img
-              className="rounded-lg"
-              src="https://cyber-movie-bootstrap.vercel.app/img/movie-3.jpg"
-              alt="movie"
-            />
-            <span className="mt-[10px] absolute left-[50%] translate-x-[-50%] font-medium">
-              Venture
-            </span>
-          </div>
-          <span className="flex items-center absolute left-[50%] translate-x-[-50%] bottom-[-60px]">
-            <span className="text-[#ec7532]">
-              <AiFillStar />
-            </span>
-            <span className="text-[#ec7532]">
-              <AiFillStar />
-            </span>
-            <span className="text-[#ec7532]">
-              <AiFillStar />
-            </span>
-            <span className="text-[#ec7532]">
-              <AiFillStar />
-            </span>
-            <span className="text-[#ec7532]">
-              <AiFillStar />
-            </span>
-          </span>
-        </div>
-        <div className="relative">
-          <div className="relative">
-            <img
-              className="rounded-lg"
-              src="https://cyber-movie-bootstrap.vercel.app/img/movie-4.jpg"
-              alt="movie"
-            />
-            <span className="mt-[10px] absolute left-[50%] translate-x-[-50%] font-medium">
-              Hush
-            </span>
-          </div>
-          <span className="flex items-center absolute left-[50%] translate-x-[-50%] bottom-[-60px]">
-            <span className="text-[#ec7532]">
-              <AiFillStar />
-            </span>
-            <span className="text-[#ec7532]">
-              <AiFillStar />
-            </span>
-            <span className="text-[#ec7532]">
-              <AiFillStar />
-            </span>
-            <span className="text-[#ec7532]">
-              <AiFillStar />
-            </span>
-            <span className="text-[#ec7532]">
-              <AiFillStar />
-            </span>
-          </span>
-        </div>
+        ))}
       </div>
     </div>
   );

@@ -1,3 +1,71 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .link {
+    position: relative;
+  }
+
+  .link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(to right, #fbbd61, #ec7532);
+    box-shadow: 0 0 20px 0 #fbbd61;
+    transition: all 0.5s;
+  }
+
+  .link.active::before {
+    width: 100%;
+  }
+
+  .link:hover::before {
+    width: 100%;
+  }
+
+  .button {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 100%;
+    display: block;
+    background-color: #ec7532;
+    transform: skewX(30deg) translateX(-110%);
+    transition: all 0.5s;
+  }
+
+  .button:hover::before {
+    transform: skewX(30deg) translateX(-10%);
+  }
+
+  .image {
+    overflow: hidden;
+  }
+
+  .image:hover > .image-overlay {
+    transform: skewX(30deg) translateX(-25%);
+  }
+
+  .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(to bottom, #fbbd61, #ec7532);
+    opacity: 0.9;
+    transform: skewX(30deg) translateX(-150%);
+    transition: all 0.5s;
+  }
+}

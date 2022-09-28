@@ -1,25 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiFillStar } from "react-icons/ai";
 import { BiCalendar } from "react-icons/bi";
 import { MdNavigateNext } from "react-icons/md";
-import { GrCaretNext } from "react-icons/gr";
+import { BsFillPlayFill } from "react-icons/bs";
 function ComingSoon() {
+  const [isShowVideo, setIsShowVideo] = useState(false);
+
   return (
     <>
+      {isShowVideo && (
+        <div
+          onClick={() => setIsShowVideo(false)}
+          className="fixed inset-0 bg-black/80 z-30 flex justify-center items-center"
+        >
+          <div className="relative lg:w-[960px] lg:h-[540px] md:w-[640px] md:h-[360px] h-[260px] w-full p-8">
+            <iframe
+              className="absolute inset-0 w-[calc(100%-2rem)] h-full left-1/2 transform -translate-x-1/2"
+              src="https://www.youtube.com/embed/tgB1wUcmbbw"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      )}
       <div
-        className={`w-full h-[600px] bg-[black] bg-cover bg-[url("https://cyber-movie-bootstrap.vercel.app/img/slide-3.png")] relative`}
+        className={`w-full bg-[black] bg-cover bg-[url("https://cyber-movie-bootstrap.vercel.app/img/slide-3.png")] relative`}
       >
-        <div className="w-[80%] my-[20px] mx-auto">
-          <div className="pt-[60px]">
-            <span
-              className="text-[18px] font-[600] border-b-[1px] border-gray-300 cursor-pointer text-[#fff]  pb-[20px] relative transition-all w-min-content
-           before:h-1 before:absolute before:bottom-0 before:right-0 before:transition-all before:duration-500
-          before:w-full before:left-0 before:bg-[#ec7532] mt-[20px] mb-[15px]"
-            >
+        <div className="xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[730px] my-[20px] mx-auto p-2 md:p-0">
+          <div className="py-[60px]">
+            <div className="link active text-lg w-full pb-8 text-white w-fit">
               COMING SOON
-            </span>
-            <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[80%] flex items-center justify-between">
-              <div>
+            </div>
+            <div className="border-b border-black/20"></div>
+            <div className="mt-20 xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[730px] p-2 md:p-0 w-full flex flex-col sm:flex-row items-center justify-between">
+              <div className="min-w-[417px] mr-4">
                 <h3 className="text-[#ec7532]">COMEDY, CRIME</h3>
                 <h3 className="text-[#fff] font-[300] text-[40px]">
                   The Hangover Part III
@@ -58,61 +74,41 @@ function ComingSoon() {
                   prison and is on the run.
                 </h3>
                 <div className="flex items-center mt-[30px] text-[#ec7532]">
-                  <span className="font-medium ">MORE INFOR </span>
+                  <span className="text-sm tracking-[0.2rem]">MORE INFOR </span>
                   <span className="">
                     <MdNavigateNext />
                   </span>
                 </div>
               </div>
-              <div className="bg-[url(https://cyber-movie-bootstrap.vercel.app/img/slide-3-video.png)] bg-cover relative">
-                <div>
-                  <iframe
-                    width="560"
-                    height="315"
-                    // src="https://www.youtube.com/embed/tgB1wUcmbbw"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-                <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] ">
-                  <span className="text-[#fff] text-[50px] ">
-                    <GrCaretNext />
-                  </span>
+              <div
+                className="relative cursor-pointer overflow-hidden md:max-w-[330px] lg:max-w-[540px]"
+                onClick={() => setIsShowVideo(true)}
+              >
+                <img
+                  src="https://cyber-movie-bootstrap.vercel.app/img/slide-3-video.png"
+                  alt="movies"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute text-white inset-0 flex justify-center items-center text-5xl">
+                  <div className="p-4 border border-[#ec7532] rounded-full">
+                    <BsFillPlayFill />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="w-full h-[400px] bg-[black] relative">
-        <div className="w-[80%] my-0 mx-auto flex flex-items justify-between absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
-          <img
-            src="https://cyber-movie-bootstrap.vercel.app/img/movie-9.jpg"
-            alt="movies"
-            className="w-[20%] h-[20%] p-[20px] opacity-[0.5] hover:opacity-[1] rounded-[30px]"
-          />
-          <img
-            src="https://cyber-movie-bootstrap.vercel.app/img/movie-8.jpg"
-            alt="movies"
-            className="w-[20%] h-[20%] p-[20px] opacity-[0.5] hover:opacity-[1] rounded-[30px]"
-          />
-          <img
-            src="https://cyber-movie-bootstrap.vercel.app/img/movie-11.jpg"
-            alt="movies"
-            className="w-[20%] h-[20%] p-[20px] opacity-[0.5] hover:opacity-[1] rounded-[30px]"
-          />
-          <img
-            src="https://cyber-movie-bootstrap.vercel.app/img/movie-13.jpg"
-            alt="movies"
-            className="w-[20%] h-[20%] p-[20px] opacity-[0.5] hover:opacity-[1] rounded-[30px]"
-          />
-          <img
-            src="https://cyber-movie-bootstrap.vercel.app/img/movie-12.jpg"
-            alt="movies"
-            className="w-[20%] h-[20%] p-[20px] opacity-[0.5] hover:opacity-[1] rounded-[30px]"
-          />
+      <div className="w-full xl:h-[357px] p-20 bg-[#101010] flex justify-center items-center">
+        <div className="xl:max-w-[1140px] lg:max-w-[960px] md:max-w-[730px] w-full grid grid-cols-3 gap-8 lg:grid-cols-6">
+          {[9, 8, 11, 13, 12, 14].map((url) => (
+            <img
+              key={url}
+              src={`https://cyber-movie-bootstrap.vercel.app/img/movie-${url}.jpg`}
+              alt="movies"
+              className="w-full opacity-50 hover:opacity-100 rounded-lg transition-opacity"
+            />
+          ))}
         </div>
       </div>
     </>
