@@ -8,6 +8,7 @@ function Header() {
   const navLinks = ["Home", "What's on", "Shortcodes", "News", "Contact"];
   const [isRadio, setIsRadio] = useState(1);
   const [isShow, setIsShow] = useState(false);
+  const [isAnimation, setIsAnimation] = useState(true);
   //   let urlImage ="https://cyber-movie-bootstrap.vercel.app/img/hero-1.jpg"
   const handlerSelectRadio = (e) => {
     setIsRadio(+e.currentTarget.value);
@@ -80,12 +81,17 @@ function Header() {
           </div>
         </div>
         <div className="absolute top-[40%]">
-          <div className="animate-fade-in-down">
-            <span className="text-[#fbbd61] font-small">
-              ACTION, ADVENTURE, FANTASY
-            </span>
+          <div
+            onAnimationEnd={() => setIsAnimation(false)}
+            className={`${isAnimation ? "animate-fade-in-down-delay" : ""}`}
+          >
+            <span className="text-[#fbbd61] font-small">ACTION, ADVENTURE, FANTASY</span>
           </div>
-          <div className="text-4xl md:text-5xl lg:text-6xl text-[#fff] font-[500] animate-fade-in-down">
+          <div
+            className={`text-4xl md:text-5xl lg:text-6xl text-[#fff] font-[500] ${
+              isAnimation ? "animate-fade-in-down" : ""
+            }`}
+          >
             {isRadio === 1
               ? "End of the World: Part I"
               : isRadio === 2
@@ -94,12 +100,11 @@ function Header() {
               ? "End of the World: Part III"
               : null}
           </div>
-          <div className="text-[#fff] font-medium animate-fade-in-up mt-4">
-            Claritas est etiam processus dynamicus, qui sequitur mutationem
-            consuetudium lectorum. Mirum est notare quam <br /> littera gothica,
-            quam nunc putamu.
+          <div className={`text-[#fff] font-medium mt-4 ${isAnimation ? "animate-fade-in-up" : ""}`}>
+            Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam{" "}
+            <br /> littera gothica, quam nunc putamu.
           </div>
-          <div className="flex items-center animate-fade-in-up mt-8">
+          <div className={`flex items-center mt-8 ${isAnimation ? "animate-fade-in-up-delay" : ""}`}>
             <div className="w-[50px] h-[50px] rounded-[50%] border-[2px] border-white relative mr-[10px]">
               <span className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-[#fff]">
                 PG
@@ -110,9 +115,7 @@ function Header() {
                 <span className="flex items-center text-xl mr-2 z-10">
                   <BsFillPlayFill />
                 </span>
-                <span className="text-sm tracking-[0.3rem] z-10">
-                  PLAY TRAILER
-                </span>
+                <span className="text-sm tracking-[0.3rem] z-10">PLAY TRAILER</span>
               </div>
             </div>
           </div>
@@ -124,6 +127,7 @@ function Header() {
             name="image1"
             onChange={handlerSelectRadio}
             value="1"
+            onClick={() => setIsAnimation(true)}
             checked={isRadio === 1}
           />
           <input
@@ -132,6 +136,7 @@ function Header() {
             name="image1"
             onChange={handlerSelectRadio}
             value="2"
+            onClick={() => setIsAnimation(true)}
             checked={isRadio === 2}
           />
           <input
@@ -140,6 +145,7 @@ function Header() {
             name="image1"
             onChange={handlerSelectRadio}
             value="3"
+            onClick={() => setIsAnimation(true)}
             checked={isRadio === 3}
           />
         </div>
