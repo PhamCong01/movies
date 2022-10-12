@@ -4,10 +4,10 @@ import { BiSearchAlt2 } from "react-icons/bi";
 import { BsFillPlayFill } from "react-icons/bs";
 import { FiPhone } from "react-icons/fi";
 import logo from "../../../images/logo.svg";
-function Header() {
+function Header({setIsShow}) {
   const navLinks = ["Home", "What's on", "Shortcodes", "News", "Contact"];
   const [isRadio, setIsRadio] = useState(1);
-  const [isShow, setIsShow] = useState(false);
+  // const [isShow, setIsShow] = useState(false);
   const [isAnimation, setIsAnimation] = useState(true);
   //   let urlImage ="https://cyber-movie-bootstrap.vercel.app/img/hero-1.jpg"
   const handlerSelectRadio = (e) => {
@@ -49,7 +49,7 @@ function Header() {
           >
             <FaBars />
           </div>
-          {isShow && (
+          {/* {isShow && (
             <div className="fixed md:hidden w-full left-0 right-0 p-2 top-24 z-20 ">
               <ul className="bg-black/90 text-center">
                 {navLinks.map((link) => (
@@ -64,7 +64,7 @@ function Header() {
                 ))}
               </ul>
             </div>
-          )}
+          )} */}
           <div className="md:flex hidden">
             <ul className="flex items-center border-b border-white/20 ml-8">
               {navLinks.map((link) => (

@@ -15,7 +15,7 @@ function NavFixed() {
 
   return (
     <div
-      className={`bg-[#101010] fixed top-0 w-full z-50 py-2 transform transition-all duration-500 ${
+      className={`bg-[#101010] fixed z-[999999] top-0 w-full py-2 transform transition-all duration-500 ${
         position > 200 ? "translate-y-0" : " -translate-y-full"
       }`}
     >
